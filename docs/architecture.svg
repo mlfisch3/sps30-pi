@@ -1,56 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 420" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#546E7A"/>
     </marker>
   </defs>
 
-  <!-- Sensor -->
-  <g>
-    <rect x="20" y="110" width="180" height="100" rx="10" fill="#FFF3E0" stroke="#FB8C00" stroke-width="2"/>
-    <text x="110" y="150" text-anchor="middle" fill="#E65100" font-weight="700">Sensirion SPS30</text>
-    <text x="110" y="172" text-anchor="middle" fill="#E65100">particulate matter</text>
-    <text x="110" y="190" text-anchor="middle" fill="#E65100">sensor</text>
-  </g>
+  <!-- Pi group frame (behind the daemon box) -->
+  <rect x="300" y="110" width="240" height="200" rx="14" fill="#FAFAFA" stroke="#90A4AE" stroke-width="1" stroke-dasharray="6 5"/>
+  <text x="420" y="134" text-anchor="middle" fill="#546E7A" font-weight="600" font-size="13">Raspberry Pi 4</text>
 
-  <!-- Pi group -->
-  <g>
-    <rect x="310" y="60" width="240" height="200" rx="14" fill="#FAFAFA" stroke="#90A4AE" stroke-width="1" stroke-dasharray="6 5"/>
-    <text x="430" y="88" text-anchor="middle" fill="#546E7A" font-weight="600" font-size="13">Raspberry Pi 4</text>
-    <rect x="340" y="130" width="180" height="100" rx="10" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
-    <text x="430" y="170" text-anchor="middle" fill="#0D47A1" font-weight="700">sps30_daemon</text>
-    <text x="430" y="192" text-anchor="middle" fill="#0D47A1">systemd service</text>
-    <text x="430" y="210" text-anchor="middle" fill="#0D47A1">SHDLC parser</text>
-  </g>
+  <!-- User devices group frame (behind the two client boxes) -->
+  <rect x="640" y="40" width="380" height="340" rx="14" fill="#FAFAFA" stroke="#90A4AE" stroke-width="1" stroke-dasharray="6 5"/>
+  <text x="830" y="64" text-anchor="middle" fill="#546E7A" font-weight="600" font-size="13">User devices</text>
 
-  <!-- User devices group -->
-  <g>
-    <rect x="650" y="20" width="290" height="280" rx="14" fill="#FAFAFA" stroke="#90A4AE" stroke-width="1" stroke-dasharray="6 5"/>
-    <text x="795" y="48" text-anchor="middle" fill="#546E7A" font-weight="600" font-size="13">User devices</text>
+  <!-- Sensor box -->
+  <rect x="20" y="160" width="200" height="100" rx="10" fill="#FFF3E0" stroke="#FB8C00" stroke-width="2"/>
+  <text x="120" y="195" text-anchor="middle" fill="#E65100" font-weight="700" font-size="15">Sensirion SPS30</text>
+  <text x="120" y="217" text-anchor="middle" fill="#E65100">particulate matter</text>
+  <text x="120" y="235" text-anchor="middle" fill="#E65100">sensor</text>
 
-    <rect x="680" y="70" width="230" height="90" rx="10" fill="#F3E5F5" stroke="#8E24AA" stroke-width="2"/>
-    <text x="795" y="104" text-anchor="middle" fill="#4A148C" font-weight="700">Android app</text>
-    <text x="795" y="124" text-anchor="middle" fill="#4A148C">com.sensirion.sps30</text>
-    <text x="795" y="144" text-anchor="middle" fill="#4A148C">phone and tablet</text>
+  <!-- Daemon box -->
+  <rect x="320" y="170" width="200" height="100" rx="10" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+  <text x="420" y="205" text-anchor="middle" fill="#0D47A1" font-weight="700" font-size="15">sps30_daemon</text>
+  <text x="420" y="227" text-anchor="middle" fill="#0D47A1">systemd service</text>
+  <text x="420" y="245" text-anchor="middle" fill="#0D47A1">SHDLC parser</text>
 
-    <rect x="680" y="190" width="230" height="90" rx="10" fill="#F3E5F5" stroke="#8E24AA" stroke-width="2"/>
-    <text x="795" y="222" text-anchor="middle" fill="#4A148C" font-weight="700">Wear OS</text>
-    <text x="795" y="244" text-anchor="middle" fill="#4A148C">complication + tile</text>
-    <text x="795" y="262" text-anchor="middle" fill="#4A148C">watch glance</text>
+  <!-- App box -->
+  <rect x="680" y="90" width="300" height="110" rx="10" fill="#F3E5F5" stroke="#8E24AA" stroke-width="2"/>
+  <text x="830" y="128" text-anchor="middle" fill="#4A148C" font-weight="700" font-size="15">Android app</text>
+  <text x="830" y="150" text-anchor="middle" fill="#4A148C">com.sensirion.sps30</text>
+  <text x="830" y="170" text-anchor="middle" fill="#4A148C">phone and tablet</text>
 
-    <!-- phone -> watch (inside group) -->
-    <line x1="795" y1="160" x2="795" y2="190" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
-    <text x="810" y="178" fill="#546E7A" font-size="11">Data Layer</text>
-  </g>
+  <!-- Wear box -->
+  <rect x="680" y="250" width="300" height="110" rx="10" fill="#F3E5F5" stroke="#8E24AA" stroke-width="2"/>
+  <text x="830" y="288" text-anchor="middle" fill="#4A148C" font-weight="700" font-size="15">Wear OS</text>
+  <text x="830" y="310" text-anchor="middle" fill="#4A148C">complication + tile</text>
+  <text x="830" y="330" text-anchor="middle" fill="#4A148C">watch glance</text>
 
-  <!-- Sensor -> Pi -->
-  <line x1="200" y1="160" x2="340" y2="180" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="270" y="155" text-anchor="middle" fill="#546E7A" font-size="11">UART 115200 baud</text>
-  <text x="270" y="169" text-anchor="middle" fill="#546E7A" font-size="11">SHDLC framing</text>
+  <!-- Sensor to Daemon: horizontal arrow with labels well above -->
+  <line x1="220" y1="210" x2="314" y2="215" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="267" y="182" text-anchor="middle" fill="#546E7A" font-size="12">UART 115200 baud</text>
+  <text x="267" y="198" text-anchor="middle" fill="#546E7A" font-size="12">SHDLC framing</text>
 
-  <!-- Pi -> App -->
-  <line x1="520" y1="170" x2="680" y2="115" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="605" y="128" text-anchor="middle" fill="#546E7A" font-size="11">Wi-Fi TCP 8730</text>
-  <text x="605" y="142" text-anchor="middle" fill="#546E7A" font-size="11">or BLE NUS</text>
+  <!-- Daemon to App: L-shaped path, labels on vertical segment -->
+  <polyline points="520,210 600,210 600,145 674,145" fill="none" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="612" y="180" fill="#546E7A" font-size="12">Wi-Fi TCP 8730</text>
+  <text x="612" y="196" fill="#546E7A" font-size="12">or BLE NUS</text>
+
+  <!-- App to Wear: vertical arrow with label to the right -->
+  <line x1="830" y1="200" x2="830" y2="244" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="845" y="228" fill="#546E7A" font-size="12">Data Layer</text>
 </svg>
