@@ -9,30 +9,7 @@ Verified against real hardware (SPS30 firmware 2.1, Raspberry Pi 4).
 
 ## System architecture
 
-```mermaid
-flowchart LR
-    classDef sensor fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100,font-weight:bold
-    classDef service fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1,font-weight:bold
-    classDef client fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#4A148C,font-weight:bold
-
-    SPS30["🧪 Sensirion SPS30<br/>particulate matter sensor"]:::sensor
-
-    subgraph Pi ["Raspberry Pi 4"]
-        Daemon["⚙️ sps30_daemon<br/>systemd service"]:::service
-    end
-
-    subgraph User ["User devices"]
-        App["📱 Android app<br/>com.sensirion.sps30"]:::client
-        Watch["⌚ Wear OS<br/>complication + tile"]:::client
-        App -->|Data Layer| Watch
-    end
-
-    SPS30 -->|UART 115200 baud, SHDLC| Daemon
-    Daemon -->|Wi-Fi TCP 8730 or BLE NUS| App
-
-    style Pi fill:#FAFAFA,stroke:#90A4AE,stroke-width:1px,stroke-dasharray: 5 5
-    style User fill:#FAFAFA,stroke:#90A4AE,stroke-width:1px,stroke-dasharray: 5 5
-```
+![System architecture: SPS30 sensor on Raspberry Pi 4 streaming to Android phone and Wear OS watch](docs/architecture.svg)
 
 - The SPS30 streams particle readings over its UART interface at 115200 baud.
 - A Python daemon on the Pi (`pi/sps30_daemon.py`) runs as a systemd service, parses the SHDLC frames, and exposes readings on the local network and over Bluetooth Low Energy.
