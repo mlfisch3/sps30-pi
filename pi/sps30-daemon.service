@@ -1,0 +1,37 @@
+# SPS30 acquisition daemon - systemd service unit
+#
+# Install (on the Raspberry Pi, as root):
+#   sudo cp sps30-daemon.service /etc/systemd/system/sps30-daemon.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now sps30-daemon.service
+#
+# Follow the logs (journald captures the daemon's stdout):
+#   journalctl -u sps30-daemon.service -f
+#
+# The service user must be able to open the serial port. On Raspberry Pi OS
+# that means being in the 'dialout' group and having the serial console
+# disabled so /dev/serial0 is free for the sensor:
+#   sudo usermod -aG dialout pi
+#   sudo raspi-config   # Interface Options -> Serial: login shell NO, hardware YES
+#
+# Adjust the paths and the user below to match your installation.
+# Adjust ExecStart flags (or the SPS30_* environment variables) as needed.
+
+[Unit]
+Description=SPS30 particulate matter acquisition daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=dialout
+WorkingDirectory=/opt/sps30
+ExecStart=/usr/bin/python3 /opt/sps30/sps30_daemon.py --port /dev/serial0 --tcp-port 8730 --csv-dir /var/lib/sps30 --interval 1.0
+Restart=always
+RestartSec=3
+# Flush stdout immediately so journald sees log lines in real time.
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

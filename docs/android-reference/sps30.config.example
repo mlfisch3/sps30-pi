@@ -1,0 +1,25 @@
+# SPS30 dashboard client config
+#
+# Location: ${XDG_CONFIG_HOME:-$HOME/.config}/sps30/config
+# Format:   simple KEY=VALUE lines. Blank lines and lines starting with '#'
+#           are ignored. No quotes, no spaces around '='.
+#
+# You normally do not need to set a host at all: if none of the configured
+# candidates connect, the launcher automatically sweeps your local subnet for the
+# daemon, so it finds the Pi even when its DHCP IP changes. To pin a host, use:
+#   sps30 --set-host <ip-or-name>
+# which updates the 'host' value below (comments are preserved).
+
+# Optional: hostname or IP of the Raspberry Pi running the SPS30 daemon.
+# Leave this UNSET to rely on auto-discovery. Set a raw IP (e.g. 192.168.1.159)
+# to skip the sweep and connect immediately. Note: 'pi.local' (mDNS) is tried as
+# a best-effort convenience but often does NOT resolve on Android/Termux, so do
+# not rely on it there - prefer a raw IP or auto-discovery.
+#host=192.168.1.159
+
+# TCP port the daemon listens on (JSONL over TCP). The daemon default is 8730.
+port=8730
+
+# NOTE: the last host that successfully connected is remembered automatically in
+# a SEPARATE state file (next to this one, named 'state') - NOT here - so normal
+# launches never rewrite this config or disturb your comments.

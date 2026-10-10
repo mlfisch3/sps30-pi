@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window-level theme applied before Compose draws. Compose (Material 3)
+         owns the real theming; this just gives a sensible no-action-bar shell. -->
+    <style name="Theme.SPS30" parent="android:Theme.Material.NoActionBar" />
+</resources>

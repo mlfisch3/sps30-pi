@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Blank device-default theme; Wear Compose supplies the actual styling. -->
+    <style name="Theme.SPS30Wear" parent="@android:style/Theme.DeviceDefault" />
+</resources>

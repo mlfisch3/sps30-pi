@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SPS30 Air</string>
+    <string name="complication_label">PM2.5 (SPS30)</string>
+    <string name="tile_label">SPS30 Air</string>
+    <string name="no_data">No data yet</string>
+    <string name="waiting_phone">Waiting for phone relay…</string>
+</resources>

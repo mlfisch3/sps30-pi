@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# sps30 - thin launcher for the SPS30 Textual dashboard client.
+#
+# This is the TEMPLATE / source of the launcher. setup.sh installs a copy of
+# this onto PATH, substituting the real @INSTALL_DIR@ and @PYTHON@ values that
+# were chosen at install time. All real logic lives in sps30_launch.py.
+#
+# If the placeholders below are still present (i.e. this file was run directly
+# from the repo rather than an installed copy), we fall back to sensible
+# defaults so the template is still runnable for development.
+set -eu
+
+INSTALL_DIR="@INSTALL_DIR@"
+PYTHON="@PYTHON@"
+
+# Fallbacks when running the un-substituted template directly.
+case "$INSTALL_DIR" in
+  "@INSTALL""_DIR@")
+    # Resolve the directory this script lives in.
+    SELF="$0"
+    while [ -h "$SELF" ]; do
+      dir="$(cd -P "$(dirname "$SELF")" && pwd)"
+      SELF="$(readlink "$SELF")"
+      case "$SELF" in /*) ;; *) SELF="$dir/$SELF" ;; esac
+    done
+    INSTALL_DIR="$(cd -P "$(dirname "$SELF")" && pwd)"
+    ;;
+esac
+case "$PYTHON" in
+  "@PYTHON""@")
+    if command -v python3 >/dev/null 2>&1; then PYTHON="python3"; else PYTHON="python"; fi
+    ;;
+esac
+
+exec "$PYTHON" "$INSTALL_DIR/sps30_launch.py" "$@"

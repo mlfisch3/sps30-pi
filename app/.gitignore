@@ -1,0 +1,10 @@
+# Gradle / Android build artifacts and per-machine config.
+.gradle/
+build/
+local.properties
+*.apk
+*.aab
+captures/
+.idea/
+*.iml
+.kotlin/
