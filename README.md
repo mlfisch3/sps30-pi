@@ -10,17 +10,31 @@ Verified against real hardware (SPS30 firmware 2.1, Raspberry Pi 4).
 ## System architecture
 
 ```mermaid
-flowchart LR
-    SPS30["Sensirion SPS30<br/>particulate matter sensor"]
-    Pi["Raspberry Pi 4<br/>UART @ 115200 baud<br/>SHDLC protocol"]
-    Daemon["sps30_daemon.py<br/>systemd service"]
-    App["Android app<br/>com.sensirion.sps30"]
-    Wear["Wear OS<br/>complication + tile"]
+graph LR
+    %% Theme
+    classDef sensor fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100,font-weight:bold;
+    classDef service fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1,font-weight:bold;
+    classDef client fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#4A148C,font-weight:bold;
 
-    SPS30 -- UART --> Pi
-    Pi --> Daemon
-    Daemon -- Wi-Fi / BLE --> App
-    App -- Data Layer --> Wear
+    SPS30["🧪 Sensirion SPS30<br/>particulate matter sensor"]:::sensor
+
+    subgraph Pi [" Raspberry Pi 4 "]
+        direction TB
+        Daemon["⚙️ sps30_daemon<br/>systemd service"]:::service
+    end
+
+    subgraph User [" User devices "]
+        direction TB
+        App["📱 Android app<br/>com.sensirion.sps30"]:::client
+        Watch["⌚ Wear OS<br/>complication + tile"]:::client
+        App -->|Data Layer| Watch
+    end
+
+    SPS30 -->|UART 115200 baud · SHDLC| Daemon
+    Daemon -->|Wi-Fi TCP 8730 or BLE NUS| App
+
+    style Pi fill:#FAFAFA,stroke:#90A4AE,stroke-width:1px,stroke-dasharray: 5 5
+    style User fill:#FAFAFA,stroke:#90A4AE,stroke-width:1px,stroke-dasharray: 5 5
 ```
 
 - The SPS30 streams particle readings over its UART interface at 115200 baud.
