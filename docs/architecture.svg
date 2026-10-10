@@ -46,10 +46,11 @@
   <text x="320" y="186" text-anchor="middle" fill="#CFD8DC" font-size="12">UART 115200 baud</text>
   <text x="320" y="202" text-anchor="middle" fill="#CFD8DC" font-size="12">SHDLC framing</text>
 
-  <!-- Daemon to App: L-shape, labels on horizontal segment, placed to clear boxes -->
-  <polyline points="620,210 720,210 720,155 814,155" fill="none" stroke="#B0BEC5" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="670" y="200" text-anchor="middle" fill="#CFD8DC" font-size="12">Wi-Fi TCP 8730</text>
-  <text x="670" y="184" text-anchor="middle" fill="#CFD8DC" font-size="12">or BLE NUS</text>
+  <!-- Daemon to App: L-shape; vertical step placed to the right so the horizontal
+       segment is wide enough to hold the longer label with a small margin -->
+  <polyline points="620,210 760,210 760,155 814,155" fill="none" stroke="#B0BEC5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="690" y="184" text-anchor="middle" fill="#CFD8DC" font-size="12">Wi-Fi TCP 8730</text>
+  <text x="690" y="200" text-anchor="middle" fill="#CFD8DC" font-size="12">or BLE NUS</text>
 
   <!-- App to Wear: vertical arrow, label to the right in the clear gap -->
   <line x1="970" y1="210" x2="970" y2="254" stroke="#B0BEC5" stroke-width="1.5" marker-end="url(#arrow)"/>
