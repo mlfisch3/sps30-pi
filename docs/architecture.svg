@@ -2,53 +2,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 420" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="14">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#546E7A"/>
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B0BEC5"/>
     </marker>
   </defs>
 
+  <!-- Dark canvas -->
+  <rect x="0" y="0" width="1040" height="420" fill="#1A1F2B"/>
+
   <!-- Pi group frame (behind the daemon box) -->
-  <rect x="300" y="110" width="240" height="200" rx="14" fill="#FAFAFA" stroke="#90A4AE" stroke-width="1" stroke-dasharray="6 5"/>
-  <text x="420" y="134" text-anchor="middle" fill="#546E7A" font-weight="600" font-size="13">Raspberry Pi 4</text>
+  <rect x="300" y="110" width="240" height="200" rx="14" fill="#121620" stroke="#546E7A" stroke-width="1" stroke-dasharray="6 5"/>
+  <text x="420" y="134" text-anchor="middle" fill="#B0BEC5" font-weight="600" font-size="13">Raspberry Pi 4</text>
 
   <!-- User devices group frame (behind the two client boxes) -->
-  <rect x="640" y="40" width="380" height="340" rx="14" fill="#FAFAFA" stroke="#90A4AE" stroke-width="1" stroke-dasharray="6 5"/>
-  <text x="830" y="64" text-anchor="middle" fill="#546E7A" font-weight="600" font-size="13">User devices</text>
+  <rect x="640" y="40" width="380" height="340" rx="14" fill="#121620" stroke="#546E7A" stroke-width="1" stroke-dasharray="6 5"/>
+  <text x="830" y="64" text-anchor="middle" fill="#B0BEC5" font-weight="600" font-size="13">User devices</text>
 
   <!-- Sensor box -->
-  <rect x="20" y="160" width="200" height="100" rx="10" fill="#FFF3E0" stroke="#FB8C00" stroke-width="2"/>
-  <text x="120" y="195" text-anchor="middle" fill="#E65100" font-weight="700" font-size="15">Sensirion SPS30</text>
-  <text x="120" y="217" text-anchor="middle" fill="#E65100">particulate matter</text>
-  <text x="120" y="235" text-anchor="middle" fill="#E65100">sensor</text>
+  <rect x="20" y="160" width="200" height="100" rx="10" fill="#3E2A14" stroke="#FFB74D" stroke-width="2"/>
+  <text x="120" y="195" text-anchor="middle" fill="#FFCC80" font-weight="700" font-size="15">Sensirion SPS30</text>
+  <text x="120" y="217" text-anchor="middle" fill="#FFCC80">particulate matter</text>
+  <text x="120" y="235" text-anchor="middle" fill="#FFCC80">sensor</text>
 
   <!-- Daemon box -->
-  <rect x="320" y="170" width="200" height="100" rx="10" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
-  <text x="420" y="205" text-anchor="middle" fill="#0D47A1" font-weight="700" font-size="15">sps30_daemon</text>
-  <text x="420" y="227" text-anchor="middle" fill="#0D47A1">systemd service</text>
-  <text x="420" y="245" text-anchor="middle" fill="#0D47A1">SHDLC parser</text>
+  <rect x="320" y="170" width="200" height="100" rx="10" fill="#1A2A42" stroke="#64B5F6" stroke-width="2"/>
+  <text x="420" y="205" text-anchor="middle" fill="#90CAF9" font-weight="700" font-size="15">sps30_daemon</text>
+  <text x="420" y="227" text-anchor="middle" fill="#90CAF9">systemd service</text>
+  <text x="420" y="245" text-anchor="middle" fill="#90CAF9">SHDLC parser</text>
 
   <!-- App box -->
-  <rect x="680" y="90" width="300" height="110" rx="10" fill="#F3E5F5" stroke="#8E24AA" stroke-width="2"/>
-  <text x="830" y="128" text-anchor="middle" fill="#4A148C" font-weight="700" font-size="15">Android app</text>
-  <text x="830" y="150" text-anchor="middle" fill="#4A148C">com.sensirion.sps30</text>
-  <text x="830" y="170" text-anchor="middle" fill="#4A148C">phone and tablet</text>
+  <rect x="680" y="90" width="300" height="110" rx="10" fill="#2E1E3A" stroke="#CE93D8" stroke-width="2"/>
+  <text x="830" y="128" text-anchor="middle" fill="#E1BEE7" font-weight="700" font-size="15">Android app</text>
+  <text x="830" y="150" text-anchor="middle" fill="#E1BEE7">com.sensirion.sps30</text>
+  <text x="830" y="170" text-anchor="middle" fill="#E1BEE7">phone and tablet</text>
 
   <!-- Wear box -->
-  <rect x="680" y="250" width="300" height="110" rx="10" fill="#F3E5F5" stroke="#8E24AA" stroke-width="2"/>
-  <text x="830" y="288" text-anchor="middle" fill="#4A148C" font-weight="700" font-size="15">Wear OS</text>
-  <text x="830" y="310" text-anchor="middle" fill="#4A148C">complication + tile</text>
-  <text x="830" y="330" text-anchor="middle" fill="#4A148C">watch glance</text>
+  <rect x="680" y="250" width="300" height="110" rx="10" fill="#2E1E3A" stroke="#CE93D8" stroke-width="2"/>
+  <text x="830" y="288" text-anchor="middle" fill="#E1BEE7" font-weight="700" font-size="15">Wear OS</text>
+  <text x="830" y="310" text-anchor="middle" fill="#E1BEE7">complication + tile</text>
+  <text x="830" y="330" text-anchor="middle" fill="#E1BEE7">watch glance</text>
 
   <!-- Sensor to Daemon: horizontal arrow with labels well above -->
-  <line x1="220" y1="210" x2="314" y2="215" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="267" y="182" text-anchor="middle" fill="#546E7A" font-size="12">UART 115200 baud</text>
-  <text x="267" y="198" text-anchor="middle" fill="#546E7A" font-size="12">SHDLC framing</text>
+  <line x1="220" y1="210" x2="314" y2="215" stroke="#B0BEC5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="267" y="182" text-anchor="middle" fill="#CFD8DC" font-size="12">UART 115200 baud</text>
+  <text x="267" y="198" text-anchor="middle" fill="#CFD8DC" font-size="12">SHDLC framing</text>
 
   <!-- Daemon to App: L-shaped path, labels on vertical segment -->
-  <polyline points="520,210 600,210 600,145 674,145" fill="none" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="612" y="180" fill="#546E7A" font-size="12">Wi-Fi TCP 8730</text>
-  <text x="612" y="196" fill="#546E7A" font-size="12">or BLE NUS</text>
+  <polyline points="520,210 600,210 600,145 674,145" fill="none" stroke="#B0BEC5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="612" y="180" fill="#CFD8DC" font-size="12">Wi-Fi TCP 8730</text>
+  <text x="612" y="196" fill="#CFD8DC" font-size="12">or BLE NUS</text>
 
   <!-- App to Wear: vertical arrow with label to the right -->
-  <line x1="830" y1="200" x2="830" y2="244" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="845" y="228" fill="#546E7A" font-size="12">Data Layer</text>
+  <line x1="830" y1="200" x2="830" y2="244" stroke="#B0BEC5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="845" y="228" fill="#CFD8DC" font-size="12">Data Layer</text>
 </svg>
